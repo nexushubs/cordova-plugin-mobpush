@@ -1,5 +1,5 @@
 {
-  "name": "mobpush",
+  "name": "cordova-plugin-mobpush",
   "version": "0.0.1",
   "description": "MobPush cordova plugin",
   "scripts": {
