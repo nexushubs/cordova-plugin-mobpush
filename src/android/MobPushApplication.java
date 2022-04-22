@@ -9,6 +9,7 @@ import com.mob.pushsdk.MobPush;
 import com.mob.pushsdk.MobPushCustomMessage;
 import com.mob.pushsdk.MobPushNotifyMessage;
 import com.mob.pushsdk.MobPushReceiver;
+import com.mob.MobSDK;
 
 import org.apache.cordova.CallbackContext;
 import org.json.JSONArray;
@@ -21,6 +22,9 @@ public class MobPushApplication extends MobApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+        MobSDK.init(this);
+        MobSDK.submitPolicyGrantResult(true, null);
+
         MobPush.addPushReceiver(new MobPushReceiver() {
             @Override
             public void onCustomMessageReceive(Context context, MobPushCustomMessage message) {
